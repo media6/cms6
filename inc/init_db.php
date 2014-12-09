@@ -1,7 +1,7 @@
 <?
-
-
-include($_SESSION['BASE_DIR'].$my_db_config);  
+                              
+                               
+  
 if($my_db_host =="" || $my_db_user=="" || $my_db_pass=="" || $my_db_name=="") {
       print "Erreur de configuration!";
 } else {
