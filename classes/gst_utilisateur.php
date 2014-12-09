@@ -69,7 +69,7 @@ class gstUtilisateur extends iptDbObject {
 // STEP 5
 // IMPLEMENT YOUR OWN FUNCTIONS....
 //******************************************************************************       
-  function CreerUtilisateur($pId, $pUtilisateur, $pPrenom="", $pNom="", $pMotDePasse="", $pCourriel="", $pActif=true, $pPhoto="",$pRenouvellement="") {
+  function CreerUtilisateur($pId, $pUtilisateur, $pPrenom="", $pNom="", $pMotDePasse="", $pCourriel="", $pActif=true, $pPhoto="",$pRenouvellement="",$pAdmin=true) {
        if($pMotDePasse=="") {
               $pMotDePasse = "b1d0n1234";
        }
@@ -82,7 +82,8 @@ class gstUtilisateur extends iptDbObject {
                                            GST_UTILISATEUR_PHOTO        => $pPhoto,
                                            GST_UTILISATEUR_MOTDEPASSE   => $pMotDePasse_crypter,
                                            GST_UTILISATEUR_COURRIEL     => $pCourriel,
-                                           GST_UTILISATEUR_ACTIF        => $pActif);
+                                           GST_UTILISATEUR_ACTIF        => $pActif,
+                                           GST_UTILISATEUR_ADMIN        => $pAdmin);
 
       if(intval($pId)==0) {
         $my_vals[GST_UTILISATEUR_DATE_INSCRIT]= date('YmdHis');

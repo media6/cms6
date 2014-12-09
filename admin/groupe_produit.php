@@ -1,7 +1,7 @@
 <?
                 
 
-include('../inc/header.php');
+include('../inc/init.php');
 include('../inc/admin_header.php');
 
        
@@ -43,8 +43,6 @@ $my_html = $x->Init($_SESSION['TEMPLATES_DIR']);
 
 
 include('../inc/admin_template.php');
-include('../inc/footer.php');
-
 
 
 

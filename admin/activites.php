@@ -1,7 +1,7 @@
 <?
 
 
-include('../inc/header.php');
+include('../inc/init.php');
 include('../inc/admin_header.php');
 
 

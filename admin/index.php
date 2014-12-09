@@ -2,7 +2,7 @@
 
 
  
-include('../inc/header.php');
+include('../inc/init.php');
 include('../inc/admin_header.php');
 
 if(isset($_GET['search_mod'])) {
@@ -141,7 +141,6 @@ if(isset($_GET['search_mod'])) {
     
 
 include('../inc/admin_template.php');
-include('../inc/footer.php');
 
 
 ?>
