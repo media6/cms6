@@ -7,6 +7,8 @@ Description:  Permet d'acceder a l'application via un navigateur internet
 
 //Importation des classes et de la configuration
 include('inc/init.php');
+   
+
 
 if(intval($_SESSION['ipt_user_id'])>0) {
     //Si l'utilisateur est deja identifier
@@ -20,7 +22,7 @@ if(intval($_SESSION['ipt_user_id'])>0) {
     //Cela evite a l'utilisateur d'avoir a le retapper en cas d'erreur d'authentification
     $default_username="";
     if(isset($_POST['tuser'])) {
-	$default_username=$_POST['tuser'];
+  	$default_username=$_POST['tuser'];
     }
 
     //Preparation du formulaire d'authentification

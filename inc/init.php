@@ -1,8 +1,8 @@
 <?
 
-
-$default_config_dir ="config/config.php";
-$default_db_file ="config/db.php";
+        session_start();
+$default_config_dir =realpath(dirname(__FILE__))."/../config/config.php";
+$default_db_file =realpath(dirname(__FILE__))."/../config/db.php";
 
 if(file_exists ( $default_config_dir )) {
 

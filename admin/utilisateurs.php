@@ -26,14 +26,14 @@ if(isset($_POST['id'])) {
        $y = new gstUtilisateur($active_db);
                                                           
        $y->LoadFromId(intval($_POST['id']));
-       $y->SetParamsFromArray(array(  GST_UTILISATEUR_UTILISATEUR    => addslashes($_POST["tuser"]),
-                                      GST_UTILISATEUR_COURRIEL    => addslashes($_POST["tcourriel"]),
-                                      GST_UTILISATEUR_NOM    => addslashes($_POST["tnom"]),
-                                      GST_UTILISATEUR_PRENOM    => addslashes($_POST["tprenom"]),
-                                      GST_UTILISATEUR_ACTIF    => intval($_POST["bactive"]),
-                                      GST_UTILISATEUR_ADMIN    => intval($_POST["badmin"])));
+       $y->SetParamsFromArray(array(  GCO_UTILISATEUR_UTILISATEUR    => addslashes($_POST["tuser"]),
+                                      GCO_UTILISATEUR_COURRIEL    => addslashes($_POST["tcourriel"]),
+                                      GCO_UTILISATEUR_NOM    => addslashes($_POST["tnom"]),
+                                      GCO_UTILISATEUR_PRENOM    => addslashes($_POST["tprenom"]),
+                                      GCO_UTILISATEUR_ACTIF    => intval($_POST["bactive"]),
+                                      GCO_UTILISATEUR_ADMIN    => intval($_POST["badmin"])));
         if($_POST["tpass"]!="bidon") {
-          $y->SetParam(GST_UTILISATEUR_MOTDEPASSE,$y->EncryptPass($_POST["tpass"])) ;
+          $y->SetParam(GCO_UTILISATEUR_MOTDEPASSE,$y->EncryptPass($_POST["tpass"])) ;
         }
         
       //  $filename="";
@@ -42,7 +42,7 @@ if(isset($_POST['id'])) {
       //  $filename = $_FILES['photo1']['tmp_name'];
     
      //}                             
-          //$y->SetParam(GST_UTILISATEUR_PHOTO,$filename,true);     
+          //$y->SetParam(GCO_UTILISATEUR_PHOTO,$filename,true);     
         $y->Save();                                                                       
     
          

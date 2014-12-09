@@ -5,9 +5,9 @@
 // STEP 1
 // SET YOUR CONST VARS TO EASILY MANAGE YOUR UPDATES LATER
 //******************************************************************************
-  define("GST_UTILISATEUR_DB_VERSION",        '1.0.1');
-  define("GST_UTILISATEUR_DB_TABLE",          'gst_utilisateur');
-  define("GST_UTILISATEUR_CRYPT_KEY",         'r8dij02d');
+  define("GST_UTILISATEUR_DB_VERSION",        '1.0.2');
+  define("GST_UTILISATEUR_DB_TABLE",          'gco_utilisateur');
+  define("GST_UTILISATEUR_CRYPT_KEY",         'rfij33a2d');
 
 
   define("GST_UTILISATEUR_ID",                1000);
@@ -69,7 +69,9 @@ class gstUtilisateur extends iptDbObject {
 // STEP 5
 // IMPLEMENT YOUR OWN FUNCTIONS....
 //******************************************************************************       
+
   function CreerUtilisateur($pId, $pUtilisateur, $pPrenom="", $pNom="", $pMotDePasse="", $pCourriel="", $pActif=true, $pPhoto="",$pRenouvellement="",$pAdmin=true) {
+       
        if($pMotDePasse=="") {
               $pMotDePasse = "b1d0n1234";
        }
@@ -124,12 +126,15 @@ class gstUtilisateur extends iptDbObject {
                          where tnomutilisateur='".$pUtilisateur."' and
                                tmotdepasse='".$pMotDePasse."' and
                                bactive=1
-                         limit 1",$this->hts_db);
-
+                         limit 1",$this->hts_db);      
+                         
+  
       				if($rs->RowCount()==1) {
 
                  $this->LoadFromId(intval($rs->GetValue("id",0)));
                  $this->SetSessionValues();
+                 
+              
                  return true;
 
               } else {
@@ -212,7 +217,7 @@ class gstUtilisateur extends iptDbObject {
   
   	          $rs = new iptDBQuery;
       				$rs->Open("select * 
-                         from gst_utilisateur
+                         from gco_utilisateur
                          order by tnomutilisateur ",$this->hts_db);
                          
       			
@@ -231,7 +236,7 @@ class gstUtilisateur extends iptDbObject {
   
   	          $rs = new iptDBQuery;
       				$rs->Open("select count(id) nb
-                         from gst_utilisateur",$this->hts_db);
+                         from gco_utilisateur",$this->hts_db);
                          
       			
               return $rs->GetValue("nb",0);
@@ -257,13 +262,13 @@ class gstUtilisateur extends iptDbObject {
     
               } else {
                  if($pHiddenPass) {
-                     $query="select 'bidon' tmotdepasse,gst_utilisateur.* 
-                           from gst_utilisateur
+                     $query="select 'bidon' tmotdepasse,gco_utilisateur.* 
+                           from gco_utilisateur
                            where id=".intval($pId);
                  } else {
                  
                 $query="select * 
-                           from gst_utilisateur
+                           from gco_utilisateur
                            where id=".intval($pId);
                 }
               }      			
@@ -280,7 +285,7 @@ class gstUtilisateur extends iptDbObject {
   function SendInfosByMail($pUsername="",$pEmail="") {
   
   	          $rs = new iptDBQuery;
-      				$rs->Open("select * from gst_utilisateur where tnomutilisateur='".addslashes($pUsername)."' or tcourriel='".addslashes($pEmail)."'",$this->hts_db);
+      				$rs->Open("select * from gco_utilisateur where tnomutilisateur='".addslashes($pUsername)."' or tcourriel='".addslashes($pEmail)."'",$this->hts_db);
               
               $nb=0;
               for($i=0;$i<$rs->RowCount();$i++) {
