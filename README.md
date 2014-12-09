@@ -1,9 +1,9 @@
-simple-cms
+cms6
 ==========
-Tous droits réservés @ Mathieu Tremblay
-Version 0.2.1
+Tous droits réservés © Media 6
+Version 1.0.0
 
-Simple-CMS permet de structurer le contenu de vos sites internet. En l'espace de quelques clics, 
+cms6 permet de structurer le contenu de vos sites internet. En l'espace de quelques clics, 
 il vous est possible de configurer un système CMS vous permettant entre autre de gérer:
 
 -Sites internet
@@ -39,5 +39,5 @@ Création écran de configuration:
 Implanter l'option du msg d'avertissement utilisé dans l'écran pages sur l'ensemble des autres formulaires
 Programmation de l'historique des modifications
 Simplification de l'écran menus
-Test du fichier d'installation
+Test du processus d'installation
 
