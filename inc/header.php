@@ -12,7 +12,11 @@ $_SESSION['RFM_REL_THUMBS']='../../../public/thumbs/';
 
 
 include_once("prog6.php");
-include(realpath(dirname(__FILE__))."/../config.php"); //This line must be edited
+include(realpath(dirname(__FILE__))."/../config.php"); //This line must be edited 
+
+$db_link = new  iptDbLink($db_host,$db_user ,$db_pass);
+$active_db = new iptDb($db_link,$db_name);
+$active_db->Create();
 
 if(!$active_db->DbObject()) {
 

@@ -18,7 +18,7 @@ if(intval($_SESSION['ipt_user_id'])>0) {
       	$x = new gstUtilisateur($active_db);
       	$x->CreerUtilisateur(1, $_POST['tnewuser'], "", "", $_POST['tmotdepasse'], "");
         $rs2 = $x->InfosUtilisateur(1);
-        $x = new iptWidget("html/dynamic/installation_reussie.html",$rs2);
+        $x = new iptWidget("html/ecrans/installation_reussie.html",$rs2);
         $my_content= $x->GetHTML();
     } else {
         $x = new gstUtilisateur($active_db);
@@ -27,7 +27,7 @@ if(intval($_SESSION['ipt_user_id'])>0) {
         } else {
     	    $rs2 = new iptDbQuery();
     	    $rs2->Open("select '".addslashes($default_username)."' tuser, '' status",$active_db);
-    	    $x = new iptWidget("html/dynamic/installation.html",$rs2);
+    	    $x = new iptWidget("html/ecrans/installation.html",$rs2);
     	    $my_content= $x->GetHTML();
         }
     }
