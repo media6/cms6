@@ -1,6 +1,6 @@
 <?
 
-
+//
 if(class_exists ("iptFile")){
 } else {
 	include($_SESSION['IPT_VARS_DIR']."/file.php");
