@@ -1,0 +1,335 @@
+
+                
+                <script>
+                
+                vDoubleCheck =false;
+
+
+function ValidateExit() {
+          
+  var bOk =true;
+     
+
+  if(bOk && !vDoubleCheck && document.getElementById('btnCancel').innerHTML =='Annuler') {
+      vDoubleCheck = true;
+      bOk=false;
+      alert('Si vous choisissez d\'annuler, vous perdrez les modifications effectuées... Cliquez de nouveau sur le bouton Annuler si vous souhaitez retourner à la liste des éléments sans enregistrer vos modifications.');
+  
+  }
+
+  if(bOk) {
+  
+      document.location='admin/pages.php'
+  }
+}                
+function ValidateForm() {
+
+  var bOk =true;
+     
+  if(bOk==true  && document.getElementById('ttitre').value=='') {
+    alert('Sorry! You need to specify a ttitre name first!');
+    document.getElementById('ttitre').focus();
+    bOk=false;                                                                   
+  }
+  
+  
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  
+}
+
+
+
+function validateEmail(pValue)
+{
+    var x=pValue;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    
+      return false;
+    } else {
+    
+      return true;
+    }
+    
+}
+
+function HasChange() {
+
+  document.getElementById('btnCancel').innerHTML ='Annuler';
+}
+
+
+</script>                           
+    
+    
+   
+   <script type="text/javascript">
+/*
+tinymce.init({
+ selector: "textarea",
+// ===========================================
+// INCLUDE THE PLUGIN
+// ===========================================
+plugins: [
+"advlist autolink lists link image charmap print preview anchor",
+"searchreplace visualblocks code fullscreen",
+"insertdatetime media table contextmenu paste jbimages"
+],
+// ===========================================
+// PUT PLUGIN'S BUTTON on the toolbar
+// ===========================================
+toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages",
+// ===========================================
+// SET RELATIVE_URLS to FALSE (This is required for images to display properly)
+// ===========================================
+relative_urls: false
+
+                    
+ });
+ */
+ 
+  //onchange="HasChange()"
+tinymce.init({
+    selector: "textarea",theme: "modern",width: 760,height: 580,
+     plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+         "searchreplace wordcount visualblocks code fullscreen visualchars insertdatetime media nonbreaking",
+         "table contextmenu directionality emoticons paste textcolor responsivefilemanager"
+
+
+   ],
+    setup: function(editor) {
+        editor.on('change', function(e) {
+            HasChange();
+            console.log('change event', e);
+        });
+    },
+   
+   toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+   toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview fullscreen code ",
+   image_advtab: true ,
+   extended_valid_elements : "img[class|src|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|usemap|style]",  
+   external_filemanager_path:"[--baseurl--]webext/ResponsiveFilemanager-master/filemanager/",
+   filemanager_title:"Responsive Filemanager" ,
+    tools: "inserttable",
+   external_plugins: { "filemanager" : "[--baseurl--]webext/ResponsiveFilemanager-master/filemanager/plugin.min.js"},
+    content_css : "/css/content.css", 
+    relative_urls: false,
+    style_formats: [
+        {title: "Headers", items: [
+            {title: "Header 1", format: "h1"},
+            {title: "Header 2", format: "h2"},
+            {title: "Header 3", format: "h3"},
+            {title: "Header 4", format: "h4"},
+            {title: "Header 5", format: "h5"},
+            {title: "Header 6", format: "h6"}
+        ]},
+        {title: "Inline", items: [
+            {title: "Bold", icon: "bold", format: "bold"},
+            {title: "Italic", icon: "italic", format: "italic"},
+            {title: "Underline", icon: "underline", format: "underline"},
+            {title: "Strikethrough", icon: "strikethrough", format: "strikethrough"},
+            {title: "Superscript", icon: "superscript", format: "superscript"},
+            {title: "Subscript", icon: "subscript", format: "subscript"},
+            {title: "Code", icon: "code", format: "code"}
+        ]},
+        {title: "Blocks", items: [
+            {title: "Paragraph", format: "p"},
+            {title: "Blockquote", format: "blockquote"},
+            {title: "Div", format: "div"},
+            {title: "Pre", format: "pre"}
+        ]},
+        {title: "Alignment", items: [
+            {title: "Left", icon: "alignleft", format: "alignleft"},
+            {title: "Center", icon: "aligncenter", format: "aligncenter"},
+            {title: "Right", icon: "alignright", format: "alignright"},
+            {title: "Justify", icon: "alignjustify", format: "alignjustify"}
+        ]},
+        {title: "Custom", items: [
+            {title: 'Number', inline: 'span', classes: 'cls_number'}          
+        ]}
+        
+
+    ]
+ });
+ 
+</script>
+
+
+
+
+<form id="form1" method="post" action="admin/pages.php" enctype="multipart/form-data">    
+<div class="inner inner2"  style="min-height:550px">
+                    <div class="row">
+                            
+                               
+                         
+                        <div class="span8 quartWidth2">
+                            <div class="padding2 noPaddingLeft980 ">
+                           
+          
+                
+<a href="#" id="btnOk"  onclick="ValidateForm()" style="margin:0px;padding:10px;cursor:pointer;margin-top:0px;float:right;margin-top:30px;width:125px;text-align:center" class="button">Enregistrer</a>                
+<a href="#" id="btnCancel" onclick="ValidateExit()" class="button"  style="cursor:pointer;margin:0px;padding:10px;float:right;margin-top:30px;width:125px;margin-right:10px;text-align:center">Retour</a>
+
+            
+                
+           <h2 >Page de contenu</h2>
+           
+           
+              <!--row-->
+
+    
+  
+
+                 
+                 
+          <fieldset>
+
+                 <input type="hidden" name="id" value="<!--col-->{id}<!--/col-->">
+
+             
+             
+             <div>
+            <div style="width:120px; float:left;">Titre :</div> 
+           <label class="name">
+              <input type="text" id="ttitre" name="ttitre" onchange="HasChange()" style="padding:5px;width:400px;float:left;" value="<!--col-->{ttitre}<!--/col-->">
+          
+            </label>
+            </div>  
+
+                  <div style="margin-top:-15px;">
+              <div style="width:120px; float:left;">Site :</div> 
+           <label class="name">
+              <select name="kcms_site" id="kcms_site" onchange="HasChange()" style="float:left" onchange="">[--combo_kcms_site--]</select>
+              
+            </label>
+            </div>
+
+
+                  <div style="margin-top:-15px;">
+              <div style="width:120px; float:left;">Langue :</div> 
+           <label class="name">
+              <select name="kcms_langue" id="kcms_langue" onchange="HasChange()" style="float:left" onchange="">[--combo_kcms_langue--]</select>
+              
+            </label>
+            </div>
+ 
+                  <div style="margin-top:-15px;" id="div_cms_menu">
+              <div style="width:120px; float:left;">Section :</div> 
+           <label class="name">
+              <select name="kcms_menu" id="kcms_menu"  onchange="HasChange()" style="float:left" onchange="">[--combo_kcms_menu--]</select>
+
+            </label>
+            </div>
+                               
+                               
+                               
+        </div>
+        </div>
+
+            <div class="span3 quartWidth1">
+                            <div class=" noPaddingLeft980">
+                                     
+                                        <div style="margin-top:40px; width:300px;min-height:280px;padding:20px;background-color:#D4D4D4;">
+                                            <h2 style="padding-top:0px;">Aide</h2>
+                                            Une fois que vous avez ajouté un site internet, vous pouvez y lier pages et des nouvelles et définir des menus.
+                                            <br><br>
+                                            
+                                        </div> 
+                                   
+                                   
+                                   
+                                   
+                                
+                                   </div>
+                        </div> 
+
+
+              <div style="clear:both;"></div>
+   
+        <div class="span16 quartWidth2">                       
+        
+                   <div class="padding2 noPaddingLeft980 ">               
+                  <div style="float:left">
+                              <h3>Contenu de la page</h3>
+            <div style="width:120px; float:left;">Contenu :</div>      <br>
+           <label class="name">
+               <textarea id="tcontenu" name="tcontenu"  style="float:left"><!--col-->{tcontenu}<!--/col--></textarea>
+            </label><br>  
+                  
+          
+
+                           
+ 
+                   
+           </fieldset>
+          
+                 
+              </div>
+          
+                   
+            
+              <div style="clear:both;"></div>
+   
+        
+
+       
+          
+
+
+    
+ 
+
+           
+                        </div>
+                    </div>
+                </div>
+</div>                
+                
+                
+                           
+</form>
+       
+       
+       
+          
+              
+<script>
+                           document.getElementById('kcms_langue').value= '<!--col-->{kcms_langue}<!--/col-->';
+                           
+document.getElementById('kcms_site').value= '<!--col-->{kcms_site}<!--/col-->';
+    
+document.getElementById('kcms_menu').value= '<!--col-->{kcms_menu}<!--/col-->';
+
+
+
+if(parseInt('[--param1--]')==1) {
+
+  
+document.getElementById('div_cms_menu').style.display= 'block';
+
+} else {
+
+document.getElementById('div_cms_menu').style.display= 'none';
+}
+
+        
+ 
+
+</script>
+
+
+<!--/row-->    
+          
+                
+                           

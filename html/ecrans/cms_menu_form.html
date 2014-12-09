@@ -1,0 +1,166 @@
+ <div class="inner inner2" style="min-height:550px">       
+                    <div class="row">
+                        <div class="span4 quartWidth1">
+                            <div class="padding2 noPaddingLeft980">
+                                      
+                                <h2>Menus</h2>     
+                             <ul class="list1">
+                                <li><a href="admin/menu.php">Liste des menus</a></li>
+                                <li><a href="admin/menu.php?id=0">Ajouter un  élément au menu</a></li>
+                                             
+                            </ul>
+                                
+                                   </div>
+                        </div>
+                        <div class="span8 quartWidth2">
+                            <div class="padding11">
+                
+                
+                
+                <script>
+function ValidateForm() {
+
+  var bOk =true;
+     
+  if(bOk==true  && document.getElementById('ttitre').value=='') {
+    alert('Sorry! You need to specify a ttitre name first!');
+    document.getElementById('ttitre').focus();
+    bOk=false;                                                                   
+  }
+  
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  
+}
+
+
+
+function validateEmail(pValue)
+{
+    var x=pValue;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    
+      return false;
+    } else {
+    
+      return true;
+    }
+    
+}
+
+
+</script>                           
+    
+    
+    
+    
+    <div class="box_2-3">
+    
+    
+           <h2 >Menu</h2>
+           
+           
+              <!--row-->
+
+    
+<form id="form1" method="post" enctype="multipart/form-data">  
+
+                 <input type="hidden" name="id" value="<!--col-->{id}<!--/col-->">
+                 
+                 
+          <fieldset>
+        
+              <div style="width:120px; float:left;">Site :</div> 
+           <label class="name">
+              <select name="kcms_site" id="kcms_site" onchange="">[--combo_kcms_site--]</select>
+            </label><br>
+
+
+              <div style="width:120px; float:left;">Langue :</div> 
+           <label class="name">
+              <select name="kcms_langue" id="kcms_langue" onchange="">[--combo_kcms_langue--]</select>
+            </label><br>
+            
+                  
+           <div style="width:120px; float:left;">Parent :</div> 
+           <label class="name">
+              <select name="kcms_menu" id="kcms_menu" onchange="">[--combo_parent--]</select>
+            </label><br>  
+                
+            <div style="width:120px; float:left;">Ordre :</div> 
+           <label class="name">
+              <input type="text" id="iordre" name="iordre" style="width:30px;" value="<!--col-->{iordre}<!--/col-->">
+            </label><br>  
+             
+            <div style="width:120px; float:left;">Titre :</div> 
+           <label class="name">
+              <input type="text" id="ttitre" name="ttitre"  value="<!--col-->{ttitre}<!--/col-->">
+            </label><br>  
+           
+            <h3>Liaison vers...</h3>
+            <div style="width:120px; float:left;">URL :</div> 
+           <label class="name">
+              <input type="text" id="turl" name="turl"  value="<!--col-->{turl}<!--/col-->">
+            </label><br>  
+           
+             
+            <div style="width:120px; float:left;">Page de contenu :</div> 
+           <label class="name">
+              <select name="kcms_contenu" id="kcms_contenu" onchange="">[--combo_contenu--]</select>
+            </label><br>  
+             
+                        
+           <fieldset>
+          
+            <p><a href="#" onclick="document.location='admin/menu.php'" class="button"  style="cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Annuler</a>
+            <a href="#" onclick="ValidateForm()" style="margin:0px;padding:10px;cursor:pointer;margin-top:0px;float:left" class="button">Enregistrer</a></p>     
+                   
+            
+              <div style="clear:both;"></div>
+   
+        
+
+          
+              
+</form>
+<script>
+
+document.getElementById('kcms_menu').value= '<!--col-->{kcms_menu}<!--/col-->';
+document.getElementById('kcms_contenu').value= '<!--col-->{kcms_contenu}<!--/col-->';
+
+document.getElementById('kcms_langue').value= '<!--col-->{kcms_langue}<!--/col-->';
+                           
+document.getElementById('kcms_site').value= '<!--col-->{kcms_site}<!--/col-->';
+
+</script>
+<!--/row-->    
+ 
+          
+    </div>
+    
+    
+ 
+
+                
+                
+
+      
+                 </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+                           

@@ -1,0 +1,65 @@
+<div class="inner inner2"  style="min-height:550px">
+                    <div class="row">
+                            
+            <div class="span4 quartWidth1">
+                         
+                        <div class="span11 quartWidth3">
+                            <div class="padding2 noPaddingLeft980 " >
+                        <a onclick="document.location='doc/index.php'"  style="float:right;margin-top:30px;width:120px;text-align:center;cursor:pointer;margin-left:10px;" class="button">Documentation</a>
+                        <a onclick="document.location='index.php'"  style="float:right;margin-top:30px;width:120px;text-align:center;cursor:pointer;" class="button">Accueil</a>
+                        
+                            
+                               <h2>Programmation</h2>
+                               <h3>Système de templates</h3>
+Le système de templates vous permet de séparer entièrement votre code source PHP du code (HTML, CSS, Javascript) de vos sites internet.
+<br><br>
+<pre>
+Fichier PHP (index.php)
+|
+'-- appelle la classe iptTemplate
+'-- lit le fichier HTML a afficher (templates/accueil.html)
+'-- remplace les valeurs nécessaires dans le fichier
+'-- Affiche la page
+</pre>
+<br><br>Voici quelques bases qui vous serviront à profiter au maximum de ce système.
+<br><br>
+
+<h2>Codes de fusions</h2>
+Lorsque l'on a un groupe de caractère compris entre les châines "[--" et "--]" (par exemple "[--user_id--]"), normalement il s'agit de mot réservés pour le remplacement directement par votre application PHP avant l'affichage de la page.
+<br><br>
+Dans la présente application, les codes de fusions suivant sont pris en compte:
+
+<pre>
+[--content--]....... Est utilisé pour des templates incluant un autre template 
+[--baseurl--]....... URL de base sans le nom du fichier appelée (dossier actif)
+[--scriptname--].... URL de la page appellée (sans le domaine) sans les variables GET
+[--username--]...... Nom d'utilisateur de l'usagé identifié au système 
+[--user_prenom--]... Nom de l'usagé identifié au système
+[--user_nom--]...... Prénom de l'usagé identifié au système
+[--userid--]........ ID de l'usagé identifié au système
+</pre>
+<br><br>
+<h2>Fusion multi-ligne</h2>
+Il est possible d'utiliser des requêtes ou tableaux pour générer vos pages de contenu. Il vous suffit de placer une balise
+<\!--row--> au début du bloc de code html et une balise<\!--/row--> à la fin pour que ce dernier soit répéter autant de fois que vous avez de lignes dans votre tableau ou jeu de données.
+<br><br>
+Chacune des colonnes de votre jeu de données peut être ensuite utilisée via le code de fusion correspondant au nom de la colonne précédé du caractère "{" et suivi du "}".
+<br><br>
+Exemple:<br><br>
+<pre><code>
+  <!--row-->
+    <a href="page.php?id={id}">{nom}</a>
+  <!--/row-->
+</code></pre> 
+Si vous souhaitez utiliser plusieurs jeux de données, il vous est possible de créer d'autres bloc de fusion en utilisant les "<\!--"" et "-->". Exemples: "<\!--row2-->","<\!--my_row-->","<\!--test de donnees-->".
+
+
+ </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+                

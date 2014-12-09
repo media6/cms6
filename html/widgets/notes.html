@@ -1,0 +1,135 @@
+<div id="noteform"  class="inner inner2" style="min-height:550px;display:none;">
+                    <div class="row">
+                      
+                   
+                            <div style="float:left;width:60%;margin-left:50px;margin-right:50px;min-height:500px;">
+                    
+        
+<h2>Liste des suivis</h2>                                         
+
+
+
+                               
+                             <table style="width:100%;margin-left:0px;" id="rounded-corner">
+                                  <thead>
+                                 <tr>
+
+                                                <td style="width:55px"> Date</td>
+                                                <td style="width:55px"> Type</td>
+                                                <td style="width:295px"> Note</td>
+                                                <td style="width:95px"> Utilisateur</td>
+                                          
+                                    </tr> 
+                                    </thead>
+                                     	<tbody>
+                                     	<!--row-->                                           
+                                     <tr>  
+                                             <td valign="top"><a href="/admin/notes.php?id=<!--col-->{id}<!--/col-->"><!--col-->{dinscrit}<!--/col--></a></td>
+                                              <td valign="top"><a href="/admin/notes.php?id=<!--col-->{id}<!--/col-->"><!--col-->{type}<!--/col--></a></td>
+                                              <td valign="top" ><b><!--col-->{ttitre}<!--/col--></b><br><!--col-->{lremarque}<!--/col--></td>
+                                              <td valign="top" ><!--col-->{tnomutilisateur}<!--/col--></td>
+                                 
+                                 </tr> 
+                                 <!--/row-->   
+                                     
+                              	</tbody>
+                             </table>
+          
+
+</div>
+ <div style="float:left;width:20%;">
+    
+    
+             <h2 style="width:100%;text-align:center;">Options</h2>
+                              
+                                           
+
+                          <a href="#" onclick="document.getElementById('mainform').style.display='block';document.getElementById('noteform').style.display='none';"  class="button"  style="width:100%;text-align:center;cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Retour</a>
+                                <div style="clear:both;margin-bottom:5px;"></div>
+                                                                
+                                
+                                 
+                                
+                             <h2 style="width:100%;text-align:center;">Ajouter une note</h2>
+                                      
+            
+<form id="frmNote" method="post" action="admin/notes.php">
+  <input type="hidden" id="note_id" name="id"  value="0">
+  <input type="hidden" id="note_kgco_utilisateur" name="kgco_utilisateur"  value="[--userid--]">
+  <input type="hidden" id="note_kparent_id" name="kparent_id"  value="[--id--]">
+  <input type="hidden" id="note_kgst_table" name="kgst_table"  value="[--parent--]">
+  
+ <select id="kgsu_type" name="kgsu_type" onchange="ShowFrmNote(this.value)">
+  <option value="0"></option>
+  <option value="1">Suivi</option>
+  <option value="2">Rendez-vous</option>
+ </select>
+        <br>
+              <div id="note_drappel" >
+Rappel: <input type="text"  id="my_drappel"  name="drappel" value="" ><br>
+</div>      <div id="note_ttitre" >
+Titre: <input type="text"  name="ttitre" value="" ><br>
+</div>
+      
+    <div id="note_lremarque" >
+
+Remarques: <input type="text"  name="lremarque" value=""><br>
+     </div>
+        
+    <div id="note_save" >
+         
+     <a href="#" onclick="document.getElementById('frmNote').submit()"  class="button"  style="width:100%;text-align:center;cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Enregistrer</a>
+                                <div style="clear:both;margin-bottom:5px;"></div>
+       </div>                                                            
+                
+ <script>
+ 
+
+
+    function ShowFrmNote(pId) {
+    
+        document.getElementById('note_drappel').style.display='none';
+        document.getElementById('note_ttitre').style.display='none';
+        document.getElementById('note_lremarque').style.display='none';
+         document.getElementById('note_save').style.display='none';
+        if(pId==1) {
+          document.getElementById('note_ttitre').style.display='block';
+          document.getElementById('note_lremarque').style.display='block';
+          document.getElementById('note_save').style.display='block'; 
+           document.getElementById('note_drappel').style.display='block';
+              $("#my_drappel").mask("00/00/0000 00:00");
+        
+        } 
+        
+        if(pId==2) {
+          document.getElementById('note_drappel').style.display='block';
+          document.getElementById('note_ttitre').style.display='block';
+          document.getElementById('note_save').style.display='block';
+          document.getElementById('note_lremarque').style.display='block';
+          
+          
+            $("#my_drappel").mask("00/00/0000 00:00");
+            
+          
+          
+            
+        }       
+      //        alert(document.getElementById('note_lremarque').style.display);  
+     
+    }
+      ShowFrmNote(0);
+                                
+</script>
+
+
+
+</form>
+ </div> 
+    </div>
+</div>                
+                
+                
+                
+                
+                
+                           

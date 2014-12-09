@@ -1,0 +1,2 @@
+Cufon.replace('ul.sf-menu>li>a, ul.sf-menu>li>ul>li>a', { fontFamily: 'Kozuka_B', hover:true});
+Cufon.replace('h2, .tabs ul.nav li a, .table-2 th, ul.list-3 li a', { fontFamily: 'Kozuka_B', hover:true});
