@@ -6,7 +6,7 @@ session_start();
 
 $default_config_dir ="../config/config.php";
 
-if(file_exists ( $default_config_dir ) {
+if(file_exists ( $default_config_dir )) {
 
     include_once($default_config_dir);
     include_once("init_session.php");
