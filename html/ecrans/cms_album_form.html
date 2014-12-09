@@ -1,0 +1,241 @@
+<script type="text/javascript" src="js/jquery.cycle.lite.js"></script>    
+    <script src="webext/galleria/galleria-1.3.3.min.js"></script>
+    <style>
+    #galleria{ width: 450px; height: 400px; background: #000 }
+</style>
+ 
+ 
+<script>
+
+ function ShowAdd() {
+ 
+  document.getElementById('photo_list').style.display='none';
+  document.getElementById('photo_add').style.display='block'; 
+  document.getElementById('photo_prev').style.display='none';
+  
+ }
+ 
+ function ShowList() {
+  document.getElementById('photo_list').style.display='block';
+  document.getElementById('photo_add').style.display='none';
+  document.getElementById('photo_prev').style.display='none';
+ }
+ 
+ 
+ function ShowPrev() {
+  document.getElementById('photo_list').style.display='none';
+  document.getElementById('photo_add').style.display='none';
+  document.getElementById('photo_prev').style.display='block';
+ }  
+  
+</script>
+                
+                
+                <script>
+function ValidateForm() {
+
+  var bOk =true;
+     
+  if(bOk==true  && document.getElementById('ttitre').value=='') {
+    alert('Sorry! You need to specify a ttitre name first!');
+    document.getElementById('ttitre').focus();
+    bOk=false;                                                                   
+  }
+  
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  
+}
+
+
+
+function validateEmail(pValue)
+{
+    var x=pValue;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    
+      return false;
+    } else {
+    
+      return true;
+    }
+    
+}
+
+
+</script>                           
+    
+
+    
+<div class="inner inner2"  style="min-height:550px">
+                    <div class="row">
+                            
+                               
+                         
+                        <div class="span8 quartWidth2">
+                            <div class="padding2 noPaddingLeft980 ">
+      
+           <a href="#" onclick="ValidateForm()"   style="float:right;margin-top:30px;width:120px;text-align:center;" class="button">Enregistrer</a>
+           <a href="#" onclick="document.location='admin/albums.php'"  style="float:right;margin-top:30px;width:120px;text-align:center;margin-right:10px;" class="button">Annuler</a>    
+                                      
+          
+    
+   
+    
+           <h2 >Album photo</h2>
+           
+           
+              <!--row-->
+
+    
+<form id="form1" method="post" action="admin/albums.php" enctype="multipart/form-data">  
+
+                 
+                 
+          <fieldset>
+
+                 <input type="hidden" name="id" value="<!--col-->{id}<!--/col-->">
+             
+             
+            <div style="width:120px; float:left;">Titre :</div> 
+           <label class="name">
+              <input type="text" id="ttitre" name="ttitre"  value="<!--col-->{ttitre}<!--/col-->">
+            </label><br>  
+           
+
+            <div style="width:120px; float:left;">Date :</div> 
+           <label class="name">
+              <input type="text" id="dinscrit" name="dinscrit"  value="<!--col-->{dinscrit}<!--/col-->">
+            </label><br>  
+           
+             
+          
+                   
+           </fieldset>
+     
+              <div style="clear:both;"></div>
+   
+        
+
+          
+              
+</form>
+<!--/row-->    
+ 
+      
+      
+                    
+                               
+        </div>
+        </div>
+
+            <div class="span4 quartWidth1">
+                            <div class=" noPaddingLeft980">
+                                     
+                                        <div style="margin-top:40px; width:300px;min-height:280px;padding:20px;background-color:#D4D4D4;">
+                                            <h2 style="padding-top:0px;">Aide</h2>
+                                            Une fois que vous avez ajouté un site internet, vous pouvez y lier pages et des nouvelles et définir des menus.
+                                            <br><br>
+                                            
+                                        </div> 
+                                   
+                                   
+                                   
+                                   
+                                
+                                   </div>
+                        </div> 
+
+
+              <div style="clear:both;"></div>
+          </div>
+          
+                <div class="row">
+                  
+                        <div class="span12 quartWidth4" >
+                            <div class="padding2 noPaddingLeft980 ">
+
+                  <div style="float:left;width:100%">
+                  
+                  
+                  
+      
+<div id="photo_prev" style="float:right;">
+    
+     <div class="galleria" id="galleria">        
+            <!--row3-->	
+            <img src="picture.php?id=<!--col-->{id}<!--/col-->">                             
+                              <!--/row3-->  
+
+        </div>
+        <script>
+            Galleria.loadTheme('webext/galleria/themes/classic/galleria.classic.min.js');
+            Galleria.run('#galleria');
+        </script>
+
+
+  
+</div>
+         
+<div id="photo_list" style="display:block">                        
+                               <h3>Liste des photos</h3> 
+                             <ul class="list1">
+                            <!--row2-->	
+                                <li><a href="admin/photos.php?id=<!--col-->{id}<!--/col-->"><!--col-->{tnom}<!--/col--></a></li>
+                              <!--/row2-->    
+                            </ul>
+                            
+                            
+               
+     
+</div>
+
+  
+
+<div id="photo_add" style="float:left;" >
+ <h3>Ajouter une photo</h3> 
+<form id="frm1" method="post" enctype="multipart/form-data">
+           <input type="hidden" name="MAX_FILE_SIZE" value="2097152" /> 
+ 
+ 
+<input type="file" name="photo1" id="photo1" style="width:400px;float:left;">
+
+<a href="#" onclick="document.getElementById('frm1').submit()" class="button"  style="margin-left:10px;margin-top:1px;float:left;cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-left:10px;">+ Ajouter</a>
+
+
+ 
+</form>
+
+</div>
+                      
+
+
+  </div>
+          
+                   
+            
+              <div style="clear:both;"></div>
+
+    
+ 
+
+           
+                        </div>
+                    </div>
+                </div>
+</div>                
+                
+                
+                
+                
+                
+                           

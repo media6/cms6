@@ -1,0 +1,214 @@
+<script type="text/javascript" src="js/jquery.cycle.lite.js"></script>    
+    <script src="webext/galleria/galleria-1.3.3.min.js"></script>
+    <style>
+    #galleria{ width: 350px; height: 300px; background: #000 }
+</style>
+ 
+
+
+
+
+       
+                
+                
+                
+                
+                
+                <script>
+function ValidateForm() {
+
+  var bOk =true;
+     
+  if(bOk==true  && document.getElementById('ttitre').value=='') {
+    alert('Sorry! You need to specify a ttitre name first!');
+    document.getElementById('ttitre').focus();
+    bOk=false;                                                                   
+  }
+  
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  
+}
+
+
+
+function validateEmail(pValue)
+{
+    var x=pValue;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    
+      return false;
+    } else {
+    
+      return true;
+    }
+    
+}
+
+
+</script>                           
+    
+    
+    
+<div class="inner inner2"  style="min-height:550px">
+                    <div class="row">
+                            
+            <div class="span4 quartWidth1">
+                            <div class="padding2 noPaddingLeft980">
+                                     
+                                        <div style="margin-top:50px; min-height:280px;padding:20px;width:100%;background-color:#D4D4D4;">
+                                            <h2 style="padding-top:0px;">Aide</h2>
+                                            Une fois que vous avez ajouté un site internet, vous pouvez y lier pages et des nouvelles et définir des menus.
+                                            <br><br>
+                                            
+                                        </div> 
+                                   
+                                   
+                                   
+                                   
+                                
+                                   </div>
+                        </div> 
+                               
+                         
+                        <div class="span8 quartWidth2">
+                            <div class="padding2 noPaddingLeft980 ">
+           
+              <!--row-->
+
+                    
+          
+           <a href="#" onclick="ValidateForm()"   style="float:right;margin-top:30px;width:120px;text-align:center;" class="button">Enregistrer</a>
+           <a href="#" onclick="document.location='admin/albums.php?id=<!--col-->{kcms_album}<!--/col-->'"  style="float:right;margin-top:30px;width:120px;text-align:center;margin-right:10px;" class="button">Annuler</a>    
+               
+   
+    
+           <h2 >Photo</h2>
+           
+           
+<form id="form1" method="post" action="admin/photos.php" enctype="multipart/form-data">  
+
+                    
+
+<div id="photo_prev" style="float:right;">
+    
+     <div class="galleria" id="galleria">        
+            <img src="picture.php?id=<!--col-->{id}<!--/col-->">                             
+                         
+
+        </div>
+        <script>
+            Galleria.loadTheme('webext/galleria/themes/classic/galleria.classic.min.js');
+            Galleria.run('#galleria');
+        </script>
+
+
+  
+</div>
+                   
+                 
+          <fieldset>
+
+                 <input type="hidden" name="id" value="<!--col-->{id}<!--/col-->">
+                 
+                 
+              <div style="width:120px; float:left;">Nom :</div><br> 
+           <label class="name">
+              <input type="text" id="tnom" name="tnom"  value="<!--col-->{tnom}<!--/col-->">
+            </label><br>  
+           
+             
+            <div style="width:120px; float:left;">Titre :</div><br> 
+           <label class="name">
+              <input type="text" id="ttitre" name="ttitre"  value="<!--col-->{ttitre}<!--/col-->">
+            </label><br>  
+      
+             
+          <div style="width:120px; float:left;">Date :</div> <br> 
+           <label class="name">
+              <input type="text" id="dinscrit" name="dinscrit"  value="<!--col-->{dinscrit}<!--/col-->">
+            </label><br>  
+           
+           
+      
+            <div style="width:120px; float:left;">Album :</div> <br> 
+           <label class="name">
+              <select name="kcms_album" id="kcms_album" onchange="">[--combo_album--]</select>
+            </label><br>  
+             
+                      <input type="hidden" name="MAX_FILE_SIZE" value="2097152" /> 
+ 
+ <label for="file">Filename:</label>
+<input type="file" name="photo1" id="photo1"><br>
+
+  
+           </fieldset>
+          
+            
+            
+            
+            <a href="#" onclick="document.location='admin/photos.php?delete=<!--col-->{id}<!--/col-->'" style="margin:0px;padding:10px;cursor:pointer;margin-top:0px;float:left;color:#FFBB00" class="button">Supprimer</a>
+            
+            
+            
+            </p>
+            
+                 
+      
+      
+      
+      
+      
+      
+      
+                   
+            
+              <div style="clear:both;"></div>
+   
+                           
+    
+          
+              
+</form>
+<script>
+
+document.getElementById('kcms_album').value= '<!--col-->{kcms_album}<!--/col-->';
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<!--/row-->    
+ 
+          
+     
+    
+ 
+
+           
+                        </div>
+                    </div>
+                </div>
+</div>                
+                
+                
+                
+                
+                
+                           

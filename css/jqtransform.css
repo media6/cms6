@@ -1,0 +1,207 @@
+/* ===========================forms======================== */
+#form2{
+	text-transform: none;
+	width: 100%;
+	display: inline-block;
+}
+#form2>a{
+	float: left;
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+#form2 select{
+	visibility: hidden;
+	float: left;
+}
+
+.select_1{
+	width: 150px;
+    position: relative;
+    float: left;
+}
+.col1, .col2{
+    display: inline-block;
+}
+.col1{
+    width: 67%;
+}
+.col2{
+    width: 92%;
+}
+
+.inp1{width: 224px;position: relative;float: left;display: block;height: 30px;}
+
+/* -------------
+ * Inputs
+ * ------------- */
+.jqTransformInputWrapper {
+	padding: 0px;
+	width: 210px;
+	display: inline-block;
+	margin-top: -10px;
+}
+
+.jqTransformInputInner {
+	padding: 0px;
+	margin: 0px;
+	background: none;
+}
+
+.jqTransformInputInner div {
+	height: 32px;
+}
+
+.jqTransformInputInner div input {
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.2em;
+	vertical-align: middle;
+	color: #9e9e9e;	
+	border: none;
+	background:transparent;
+	width: 100%;
+	outline: none;
+}
+
+/*  IE6 */
+* html .jqTransformInputInner div input {
+	padding: 6px 0 0 0;
+	margin: 0 0 0 -8px;
+	height:24px;
+}
+/* Ie7 */
+*+ html .jqTransformInputInner div input {
+	padding: 6px 0 0 0;
+	margin-left:-10px;
+	height:24px;
+}
+
+/*hover*/
+.jqTransformInputWrapper_hover{ background-position: left -31px ;}
+.jqTransformInputWrapper_hover div.jqTransformInputInner{ background-position: right -31px ;}
+
+/*focus*/
+.jqTransformInputWrapper_focus{ background-position: left -62px ;}
+.jqTransformInputWrapper_focus div.jqTransformInputInner{ background-position: right -62px ;}
+
+
+
+.jqTransformSafari .jqTransformInputInner div {
+	position: relative;
+	margin: 0px 10px;
+}
+.jqTransformSafari .jqTransformInputInner div input {
+	background-color: none;
+	position: absolute; 
+}
+
+/* -------------
+ * Selects
+ * ------------- */
+.jqTransformSelectWrapper {
+	width: 100% !important;
+	position:relative;
+	height: 31px;
+	float:left;
+	border: 1px solid #bccee6;
+	margin-right: 7px;
+	background: transparent;
+}
+
+.jqTransformSelectWrapper div span {
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	float: none;
+	position: absolute;
+	white-space: nowrap;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	cursor:pointer;
+	color: #8c8b8b;
+	margin: 0 0 0 10px;
+}
+
+.jqTransformSelectWrapper  a.jqTransformSelectOpen {
+	display: block;
+	position: absolute;
+	right: 5px;
+	width: 20px;
+	height: 21px;
+	background: url(../img/combo.png) no-repeat 50% 50%;
+	top: 5px;
+}
+
+.jqTransformSelectWrapper ul {
+	position: absolute;
+	width: 100% !important;
+	top: 30px;
+	left: -1px;
+	list-style: none;
+	background-color: #FFF;
+	display: none;
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+	overflow: auto;
+	overflow-y: auto;
+	z-index:10;
+	border: 1px solid #bccee6;
+}
+
+.jqTransformSelectWrapper ul a {
+	display: block;
+	padding: 5px 5px 5px 13px;
+	text-decoration: none;
+	color: #2E9AEF;
+	background-color: #FFF;
+    font-family: Arial, sans-serif;
+	font-size: 13px;
+}
+
+.jqTransformSelectWrapper ul a.selected {
+	background: #EDEDED;
+	color: #2E9AEF;
+}
+
+.jqTransformSelectWrapper ul a:hover, .jqTransformSelectWrapper ul a.selected:hover {
+	background: #2E9AEF;
+	color: #fff;
+}
+/* -------------
+ * Radios
+ * ------------- */
+.jqTransformRadioWrapper {float: left;display:block;	}
+.jqTransformRadio {
+	background: transparent url(../img/radio.png) no-repeat center bottom;
+	vertical-align: middle;
+	height: 10px;
+	width: 10px;
+	display:block;/*display: -moz-inline-block;*/
+	margin-top: 5px;
+}
+
+/* -------------
+ * Checked - Used for both Radio and Checkbox
+ * ------------- */
+a.jqTransformChecked { background-position: center top;}
+
+/* -------------
+ * Hidden - used to hide the original form elements
+ * ------------- */
+.jqTransformHidden {display: none;}
+
+#ui-datepicker-div{background: #fff; border: 1px solid #DBD5C7; font-family: Arial, sans-serif;margin-left: -11px;padding: 0 4px;display: none;}
+#ui-datepicker-div .ui-datepicker-prev{font-size: 13px; line-height: 20px; color: #3e3e3e;	cursor: pointer;margin-left: 5px;text-transform: uppercase;}
+#ui-datepicker-div .ui-datepicker-next{font-size: 13px; line-height: 20px; 	cursor: pointer;float: right;margin-right: 6px;text-transform: uppercase;color: #3e3e3e;}
+#ui-datepicker-div .ui-datepicker-title{font-size: 13px; color: #29b1b2;font-weight: bold;margin-left: 5px;}
+#ui-datepicker-div .ui-datepicker-calendar{font-size: 13px; color: #3e3e3e;font-weight: bold;position: relative;}
+#ui-datepicker-div .ui-datepicker-calendar thead{position: relative;font-size: 12px;text-transform: uppercase;font-weight: bold;}
+#ui-datepicker-div .ui-datepicker-calendar thead > tr > th{position: relative;}
+#ui-datepicker-div .ui-datepicker-calendar tbody{position: relative;}
+#ui-datepicker-div .ui-datepicker-calendar tbody > tr{}
+#ui-datepicker-div .ui-datepicker-calendar tbody > tr > td{padding: 5px; text-align: center;}
+#ui-datepicker-div .ui-datepicker-calendar tbody > tr > td >a{text-align: center;color: #8C8B8B;padding: 2px;}
+#ui-datepicker-div .ui-datepicker-calendar tbody > tr > td >a:hover{color: #29b1b2; text-decoration: none;}
+#ui-datepicker-div .ui-datepicker-header{padding-bottom: 6px;position: relative;}

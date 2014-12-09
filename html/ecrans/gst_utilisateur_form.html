@@ -1,0 +1,183 @@
+
+                
+                
+                
+                <script>
+function ValidateForm() {
+
+  var bOk =true;
+     
+
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  /*
+                                  alert(document.getElementById('id').value);
+    if(document.getElementById('badmin').checked!=true && document.getElementById('id').value==1) {
+    
+      document.getElementById('badmin').checked==true;
+      alert('Cet utilisateur doit conserver ses privilèges administrateurs.');
+      bOk =false;
+    
+    }
+*/  
+}
+
+
+
+function validateEmail(pValue)
+{
+    var x=pValue;
+    var atpos=x.indexOf("@");
+    var dotpos=x.lastIndexOf(".");
+    
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+    
+      return false;
+    } else {
+    
+      return true;
+    }
+    
+}
+
+
+</script>                           
+    
+    
+    
+<div class="inner inner2"  style="min-height:550px">
+                    <div class="row">
+                            
+            <div class="span4 quartWidth1">
+                            <div class="padding2 noPaddingLeft980">
+                                     
+                                        <div style="margin-top:50px; min-height:280px;padding:20px;width:100%;background-color:#D4D4D4;">
+                                            <h2 style="padding-top:0px;">Aide</h2>
+                                            Une fois que vous avez ajouté un site internet, vous pouvez y lier pages et des nouvelles et définir des menus.
+                                            <br><br>
+                                            
+                                        </div> 
+                                   
+                                   
+                                   
+                                   
+                                
+                                   </div>
+                        </div> 
+                               
+                         
+                        <div class="span8 quartWidth2">
+                            <div class="padding2 noPaddingLeft980 ">
+                           
+          
+           <a href="#" onclick="ValidateForm()"   style="float:right;margin-top:30px;width:120px;text-align:center;" class="button">Enregistrer</a>
+           <a href="#" onclick="document.location='admin/utilisateurs.php'"  style="float:right;margin-top:30px;width:120px;text-align:center;margin-right:10px;" class="button">Annuler</a>    
+               
+   
+    
+           <h2 >Utilisateur</h2>
+           
+           
+              <!--row-->
+
+    
+<form id="form1" method="post" action="admin/utilisateurs.php" enctype="multipart/form-data">  
+
+                 
+                 
+          <fieldset>
+
+                 <input type="hidden" id="id" name="id" value="<!--col-->{id}<!--/col-->">
+             
+             
+            <div style="width:120px; float:left;">Nom d'utilisateur :</div> 
+           <label class="name">
+              <input type="text" id="tuser" name="tuser"  value="<!--col-->{tnomutilisateur}<!--/col-->">
+            </label><br>  
+           
+          
+            <div style="width:120px; float:left;">Nom :</div> 
+           <label class="name">
+              <input type="text" id="tnom" name="tnom"  value="<!--col-->{tnom}<!--/col-->">
+            </label><br>  
+                
+            <div style="width:120px; float:left;">Prénom :</div> 
+           <label class="name">
+              <input type="text" id="tprenom" name="tprenom"  value="<!--col-->{tprenom}<!--/col-->">
+            </label><br>  
+             
+            <div style="width:120px; float:left;">Mot de passe :</div> 
+           <label class="name">
+              <input type="password" id="tpass" name="tpass"  value="<!--col-->{tmotdepasse}<!--/col-->">
+            </label><br>  
+           
+             
+                 
+            <div style="width:120px; float:left;">Courriel :</div> 
+           <label class="name">
+              <input type="text" id="tcourriel" name="tcourriel"  value="<!--col-->{tcourriel}<!--/col-->">
+            </label><br>  
+           
+                
+            
+                    
+            <div style="width:120px; float:left;">Actif :</div> 
+           <label class="name">
+              <input type="checkbox" id="bactive" name="bactive"  value="1">
+            </label><br>  
+           
+
+            <div style="width:120px; float:left;">Administrateur :</div> 
+           <label class="name">
+              <input type="checkbox" id="badmin" name="badmin"  value="1">
+            </label><br>  
+           
+           </fieldset>
+          
+            
+              <div style="clear:both;"></div>
+   
+        
+
+          
+              
+</form>
+<script>
+     if(parseInt('<!--col-->{bactive}<!--/col-->')==1) {
+          document.getElementById('bactive').checked=true;
+     } else {
+          document.getElementById('bactive').checked=false;
+     }
+     
+     if(parseInt('<!--col-->{badmin}<!--/col-->')==1) {
+          document.getElementById('badmin').checked=true;
+     } else {
+          document.getElementById('badmin').checked=false;
+     }
+     
+
+</script>
+<!--/row-->    
+ 
+          
+
+    
+ 
+
+           
+                        </div>
+                    </div>
+                </div>
+</div>                
+                
+                
+                
+                
+                
+                           

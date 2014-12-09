@@ -1,0 +1,290 @@
+
+<div id="mainform"  class="inner inner2" style="min-height:550px">
+                    <div class="row">
+                      
+                   
+                            <div style="float:left;width:70%;margin-left:50px;min-height:500px;">
+                    
+       
+       
+                
+                
+                
+                
+                
+                <script>
+function ValidateForm() {
+
+  var bOk =true;
+     
+
+  
+  if(bOk) {
+  
+     document.getElementById('form1').submit();
+     
+  }   else {
+
+  }
+  
+}
+
+
+
+</script>                           
+    
+        
+   
+    
+           <h2 >[--title--]</h2>
+           
+           
+              <!--row2-->
+
+    
+<form id="form1" method="post" action="<!--col-->{ybaseurl}<!--/col-->" enctype="multipart/form-data">  
+
+                 
+                 
+          <fieldset>
+
+            <input type="hidden" name="id" value="<!--col-->{id}<!--/col-->">
+             
+          
+                             <!--row-->	   
+                                <div style="display: <!--col-->{visibility}<!--/col-->">	
+                                <div style="width:120px; float:left;">
+                                
+                                <!--col-->{title}<!--/col--> :</div> 
+                                
+                                 <label class="name" id="ims_<!--col-->{fieldname}<!--/col-->">
+                                 
+                                  <input type="text" id="<!--col-->{fieldname}<!--/col-->" name="<!--col-->{fieldname}<!--/col-->"  value="<!--col-->{value}<!--/col-->">
+                                </label>
+                                
+                                <br>  
+                                </div>
+                             <!--/row-->	          
+           
+
+           </fieldset>
+          
+          <!-- 
+           <p><a href="#" onclick="document.location='<!--col-->{ybaseurl}<!--/col-->&action=list'" class="button"  style="cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Annuler</a>
+            <a href="#" onclick="ValidateForm()" style="margin:0px;padding:10px;cursor:pointer;margin-top:0px;float:left" class="button">Enregistrer</a></p>     
+            -->       
+            
+              <div style="clear:both;"></div>
+   
+        
+   
+                                      
+</form>
+
+<!--/row2-->    
+ 
+ 
+
+
+          
+<script>
+
+var imsCombos = Array();
+var imsDefault = Array();
+
+function IMS_AddComboOption(pFieldName,pValue,pTitle) {
+ 
+
+  if(!imsCombos[pFieldName]) {
+       imsCombos[pFieldName]= Array();
+  }
+  
+  imsCombos[pFieldName][pValue]= pTitle;
+  
+  
+  if(!imsDefault[pFieldName]) {
+      imsDefault[pFieldName]= 0;
+   }  
+  
+  
+}
+
+
+function IMS_InitComboDefault() {
+
+  for (var i in imsCombos)
+  {
+         // alert(i);
+          myField = ''+i+'';
+          //alert(document.getElementById(myField));
+          if(document.getElementById(myField)) {
+      	   imsDefault[i] = document.getElementById(myField).value;
+      	 } else {
+            imsDefault[i] =0;
+          
+          }
+      	  //document.getElementById('ims_cbo_'+i).value=imsDefault[i];
+      	
+   }    
+
+
+}
+
+
+function IMS_GetComboHTML(pFieldName) {
+
+ var myHTML = '';
+
+
+ if(imsCombos[pFieldName]) {
+         myHTML ='<input type="hidden" id="'+pFieldName+'" name="'+pFieldName+'" value="'+imsDefault[pFieldName]+'">';
+         myHTML +='<select id="ims_cbo_'+pFieldName+'" onchange="document.getElementById(\''+pFieldName+'\').value=this.value;">';
+        for (var i in imsCombos[pFieldName])
+      	{
+      	  myHTML += '<option value="'+i+'">'+imsCombos[pFieldName][i]+'</option>\n';
+      	}
+      	myHTML +='</select>';
+	
+  } else {
+      myHTML='No data found';
+  }
+  return myHTML;
+}
+
+function IMS_SetComboField(pFieldname) {
+
+    document.getElementById('ims_'+pFieldname).innerHTML =IMS_GetComboHTML(pFieldname);
+}
+
+function IMS_SetComboDefault() {
+    
+    for (var i in imsDefault)
+      	{
+      	
+      	  document.getElementById('ims_cbo_'+i).value=imsDefault[i];
+      	
+      	}
+     	
+}
+
+
+
+function InitAllCombos() {
+//<!--combo_data-->
+  IMS_AddComboOption('<!--col-->{fieldname}<!--/col-->','<!--col-->{id}<!--/col-->','<!--col-->{tnom}<!--/col-->');
+//<!--/combo_data-->
+
+  
+  
+    IMS_InitComboDefault();
+  
+   
+//<!--combo_default-->
+  IMS_SetComboField('<!--col-->{fieldname}<!--/col-->');
+//<!--/combo_default-->
+
+IMS_SetComboDefault();
+
+ }
+
+  
+function IMS_InitTextarea(pFieldName,pValue) {
+
+ var myHTML = '';
+
+   myHTML ='<textarea id="'+pFieldName+'" name="'+pFieldName+'">'+pValue+'';
+   myHTML +='</textarea>';
+
+ 
+  document.getElementById('ims_'+pFieldName).innerHTML = myHTML;
+}
+
+
+                       
+ function InitTextAreas() {        
+     
+//<!--txtarea_default-->
+  IMS_InitTextarea('<!--col-->{fieldname}<!--/col-->','<!--col-->{content}<!--/col-->');
+//<!--/txtarea_default-->
+
+ 
+ }
+ 
+   InitAllCombos();
+   InitTextAreas();
+ // setTimeout(function () {InitAllCombos() },2000);
+  
+  
+  
+  
+  
+
+
+
+  
+</script>
+
+ 
+
+    
+    
+<script  type="text/javascript" src="ext/jquery/jquery.mask.min.js"></script>    
+                    
+ <script>
+
+   $(document).ready(function () {
+//<!--fields_format-->    
+          $('#<!--col-->{fieldname}<!--/col-->').mask('<!--col-->{mask}<!--/col-->');
+ //<!--/fields_format-->         
+         
+    
+     }); 
+                                      
+</script>
+
+
+       
+
+           
+                        </div>
+              
+                    
+                          <div style="float:left;width:20%;min-height:500px;">
+                                 
+                                <h2 style="width:100%;text-align:center;">Options</h2>
+                              
+                                           
+            <a href="#" onclick="ValidateForm()" style="width:100%;text-align:center;margin:0px;padding:10px;cursor:pointer;margin-top:0px;float:left" class="button">Enregistrer</a>     
+                         
+                         <!--
+                          <div style="clear:both;margin-bottom:5px;"></div>
+                          <a href="#" onclick="document.location='<!--col-->{ybaseurl}<!--/col-->&action=list'" class="button"  style="width:100%;text-align:center;cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Annuler</a>
+                            -->    <div style="clear:both;margin-bottom:5px;"></div>
+
+                          <a href="#" onclick="window.history.back()" class="button"  style="width:100%;text-align:center;cursor:pointer;margin:0px;padding:10px;float:left;margin-top:0px;margin-right:20px;">Retour</a>
+                                <div style="clear:both;margin-bottom:5px;"></div>
+                                                                
+                                
+                                 
+                                
+                             <h2 style="width:100%;text-align:center;">Liens rapides</h2>
+                                      
+                          
+    <ul class="list1">        
+                                
+                                
+                               <!--options-->	
+                                <li><a href="<!--col-->{turl}<!--/col-->" <!--col-->{options}<!--/col-->><!--col-->{ttitle}<!--/col--></a></li>
+                                <!--/options-->	
+                            </ul>
+                                
+                        </div>
+                   
+                </div>
+</div>                
+                
+                
+                
+                
+                
+                           
