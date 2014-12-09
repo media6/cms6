@@ -8,6 +8,7 @@ if(class_exists ("iptFile")){
 
 $myDir = $_SESSION['IPT_VARS_DIR'];
 $x = new iptFile($myDir);
+
 $x->IncludeFilesInDir("",".php",array("index.php","config.php","file.php"));
 
 
