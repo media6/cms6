@@ -1,9 +1,6 @@
 <?
 
 
-session_start();
-
-
 $default_config_dir ="config/config.php";
 $default_db_file ="config/db.php";
 
