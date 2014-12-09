@@ -3,20 +3,26 @@
 Description:  Utiliser lorsqu'aucun utilisateur n'existe dans la base de donnees
 ********************************/
 
-include('inc/header.php');
+include('inc/init.php');
 
+ 
 
+      
 if(intval($_SESSION['ipt_user_id'])>0) {
 
     //Si l'utilisateur est deja authentifier on le redirige vers l'accueil de l'application
     header('Location: index.php');
 
 } else {
+
+
+
     $default_username="";
     if(isset($_POST['tnewuser'])) {
       	$default_username=$_POST['tnewuser'];
       	$x = new gstUtilisateur($active_db);
-      	$x->CreerUtilisateur(1, $_POST['tnewuser'], "", "", $_POST['tmotdepasse'], "");
+      	$x->CreerUtilisateur(1, $_POST['tnewuser'],$_POST['tnom'], $_POST['tprenom'], $_POST['tmotdepasse'],$_POST['tcourriel'],true, "","",true);
+      	
         $rs2 = $x->InfosUtilisateur(1);
         $x = new iptWidget("html/ecrans/installation_reussie.html",$rs2);
         $my_content= $x->GetHTML();

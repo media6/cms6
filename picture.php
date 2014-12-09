@@ -1,8 +1,6 @@
 <?
 
-include('inc/header.php');
-//include("config/config.php");
-         
+include('inc/init.php');
 
 
 

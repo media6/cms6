@@ -1,9 +1,6 @@
 <?
 
 include('inc/header.php');
-//include("config/config.php");
-         
-
 
 
 if(intval($_GET['id'])>0) {

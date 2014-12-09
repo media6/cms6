@@ -1,7 +1,7 @@
 <?
                 
 
-include('../inc/header.php');
+include('../inc/init.php');
 include('../inc/admin_header.php');
 
        
@@ -131,8 +131,6 @@ if(intval($_GET['id'])>0) {
 
 
 include('../inc/admin_template.php');
-include('../inc/footer.php');
-
 
 
 

@@ -1,7 +1,7 @@
 <?
 
 
-include('../inc/header.php');
+include('../inc/init.php');
 include('../inc/admin_header.php');
 
 
@@ -84,12 +84,6 @@ if(isset($_GET['id'])) {
 }
 
 
-
-
-
-
 include('../inc/admin_template.php');
-include('../inc/footer.php');
-
 
 ?>

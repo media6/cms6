@@ -9,7 +9,7 @@ Description:  Permet d'acceder a l'application via un navigateur internet
 ********************************/
 
 //Importation des classes et de la configuration
-include('inc/header.php');
+include('inc/init.php');
 
 if(intval($_SESSION['ipt_user_id'])>0) {
     //Si l'utilisateur est deja identifier
@@ -77,6 +77,5 @@ if(!isset($_POST['a_tcourriel'])) { $_POST['a_tcourriel']=""; }
     print $my_html;
 }
 
-die;
 
 ?>
