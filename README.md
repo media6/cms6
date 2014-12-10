@@ -11,6 +11,7 @@ il vous est possible de configurer un système CMS vous permettant entre autre d
 -Menus
 -Pages de contenu
 -Nouvelles
+-Activités (Calendrier)
 -Albums photos
 -Utilisateurs
 
@@ -22,22 +23,4 @@ Les programmeurs peuvent facilement ajouter des fonctionalités au CMS via les
 dossiers /admin /class /inc ou /js. Pour leur simplifier la vie, nous avons
 inclus IPT et Webext qui regroupent des classes et des fonctions qui leur permettront
 de rapidement déployer leurs solutions.
-
-
-
-
-to-do                                                                                       
-==========
-Ménage des fonctions javascript utilisées
-Ménage des fichiers css
-Création écran de configuration:
- -Champ kcms_menu dans l'écran pages
- -Nom de l'entreprise (titre de page)
- -Logo de l'entreprise (écrans accueil et bienvenue)
- -Largeur de l'éditeur de contenu pour les écrans (pages, nouvelles, activités)
- -Personnalisation des champs de style pour l'éditeur de contenu
-Implanter l'option du msg d'avertissement utilisé dans l'écran pages sur l'ensemble des autres formulaires
-Programmation de l'historique des modifications
-Simplification de l'écran menus
-Test du processus d'installation
 
